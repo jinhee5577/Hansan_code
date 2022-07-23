@@ -16,7 +16,7 @@
     let [Act_info, setAct_info] = useState({});
     let [actIMG, setactIMG] = useState('');
     let [show_actInfo, setshow_actInfo] = useState(false);
-    let peopleCd = ["10029474", "20147110", "10043371", "20111125", "20308770", "20127194", "10006228", "20171680", "20179005", "20110896", "10066926"];
+    let peopleCd = ["10029474", "20147110", "10043371", "20111125", "20308770", "20127194", "10006228", "20171680", "20179005", "20110896", "10066926"];  //배우들 개별 코드번호
 
     let featch_hansan = async () => {
         try {
