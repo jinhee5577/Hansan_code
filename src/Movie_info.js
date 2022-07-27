@@ -159,31 +159,33 @@
    
     
     return (
-      <div id="actor_box">
-        <button onClick={() => {setshow_actInfo(false);}} >X</button>
-        <aside>
-          <img src={actIMG} alt='배우'/>
-        </aside>
-        <section>
-          <h4>{Act_info.peopleNm} / <span>{Act_info.repRoleNm}</span></h4>
-          <h4>필모그래피 <span className='len'>{Act_info.filmos.length > 21 ? Act_info.filmos.length + '개 중 20' : Act_info.filmos.length}개</span></h4>
-          <ul>
-            {/* {  // 1번째 방법
-              filmos.map((item, i) => {
-                return <li key={i}>{item.movieNm}</li>;
-              })
-            } */}
-            {    // 2번째 방법
-              Act_info.filmos.length > 21   // 필모그래피를 20개까지만 짤라준다.
-              ? (Act_info.filmos.slice(0, 21).map((item, i) => {
+      <div id="actor_box">             
+        <div className='actor_wrap'>  
+          <button onClick={() => {setshow_actInfo(false);}} >X</button>
+          <aside>
+            <img src={actIMG} alt='배우'/>
+          </aside>
+          <section>
+            <h4>{Act_info.peopleNm} / <span>{Act_info.repRoleNm}</span></h4>
+            <h4>필모그래피 <span className='len'>{Act_info.filmos.length > 21 ? Act_info.filmos.length + '개 중 20' : Act_info.filmos.length}개</span></h4>
+            <ul>
+              {/* {  // 1번째 방법
+                filmos.map((item, i) => {
                   return <li key={i}>{item.movieNm}</li>;
-                })) 
-              : (Act_info.filmos.map((item, i) => {
-                  return <li key={i}>{item.movieNm}</li>;
-                }))  
-            }           
-          </ul>
-        </section>        
+                })
+              } */}
+              {    // 2번째 방법
+                Act_info.filmos.length > 21   // 필모그래피를 20개까지만 짤라준다.
+                ? (Act_info.filmos.slice(0, 21).map((item, i) => {
+                    return <li key={i}>{item.movieNm}</li>;
+                  })) 
+                : (Act_info.filmos.map((item, i) => {
+                    return <li key={i}>{item.movieNm}</li>;
+                  }))  
+              }           
+            </ul>
+          </section> 
+        </div>        
       </div>
     );     
  }

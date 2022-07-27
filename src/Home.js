@@ -23,7 +23,7 @@
             //  console.log(offsetY);
           if(offsetY > 250){         
               setmvON(true);
-          } if(offsetY > 420){ 
+          } if(offsetY > 460){ 
                setshow_navy(true);
             // console.log(show_navy);
           } if(offsetY > 920){
@@ -44,7 +44,10 @@
       let minutes = Math.floor((dateGap % (1000*60*60)) / (1000*60));
       let seconds = Math.floor(dateGap % (1000*60) / 1000);
       
-      Dday.innerHTML = `${day}<span>일</span> ${hours}<span>시간</span> : ${minutes}<span>분</span> : ${seconds}<span>초</span> 남았습니다.`;
+      Dday.innerHTML = (day >= 0  
+                        ? (`${day}<span>일</span> ${hours}<span>시간</span> : ${minutes}<span>분</span> : ${seconds}<span>초</span> 남았습니다.`)
+                        : (`지금부터 개봉 ${Math.abs(day)}일째 입니다!.`)   // 음수를 절대값으로 변환.
+                       );       
     };
 
     let countTime = () => { 
