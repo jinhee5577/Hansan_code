@@ -22,7 +22,7 @@
         try {
            let url = 'https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=96972ad419e3d1247b5d7fe574829c32&movieCd=20209343';
            let {data : {movieInfoResult : { movieInfo } }} = await axios.get(url);
-           console.log(movieInfo);
+        //   console.log(movieInfo);
            Sethansan_movie(movieInfo);     
 
           if(movieInfo.openDt){
@@ -56,7 +56,7 @@
     useEffect(() => {  
         featch_hansan();     
         if(show_july){
-          console.log(show_july);
+       //   console.log(show_july);
             let im = document.querySelectorAll('.im');
             let hs = document.querySelectorAll('.hs');
             setTimeout(() => {

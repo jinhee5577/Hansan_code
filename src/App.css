@@ -832,17 +832,15 @@ button{
   font-family: 'ROKAFSansMedium';
 }
 
-
 #actor_box{
-  width: 100%;
+  max-width: 400px;
   height: 100%;
   background: rgba(2, 33, 54, 0.92);
-  padding: 10px;
   position: fixed;
   top: 0%;
   left: 50%;
   transform: translateX(-50%); 
-  border-radius: 45px; 
+  border-radius: 30px; 
   /* box-sizing: border-box; */
 }
 
@@ -895,7 +893,7 @@ button{
  color: #ebfaf9;
  margin: 0 auto;
  margin-top: 25px; 
- border-radius: 10px;
+ border-radius: 18px;
  animation: forwards sca .55s;
 }
 @keyframes sca {
@@ -984,4 +982,10 @@ button{
     }
   }
   
+}
+
+@media all and (max-width: 800px) {
+  #actor_box{
+    width: 100%;  
+  }
 }
