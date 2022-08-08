@@ -41,11 +41,14 @@
             Setgenres(movieInfo.genres.map((a) => a.genreNm).join(', '));
             
             let newActors = [...movieInfo.actors];  
-            newActors.unshift(movieInfo.directors[0]);
+            newActors.unshift(movieInfo.directors[0]);   // 감독 김한민을 맨앞에 넣어주었다.
+            if(newActors[2].peopleNm === '공지삵'){  
+               newActors.splice(2, 1);    // api에 이상한 공지삵 이란 이름이 추가되어 있어서 삭제한다.              
+            } 
             newActors.forEach((item, i) => { 
                 item['img'] = actorsImg[i];   // 배우들 이미지 새로 할당.
-            })
-            setActors(newActors);           
+            })            
+            setActors(newActors);                    
           } 
 
         } catch(error){
