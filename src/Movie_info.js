@@ -22,7 +22,7 @@
         try {
            let url = 'https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=96972ad419e3d1247b5d7fe574829c32&movieCd=20209343';
            let {data : {movieInfoResult : { movieInfo } }} = await axios.get(url);
-        //   console.log(movieInfo);
+         //  console.log(movieInfo);
            Sethansan_movie(movieInfo);     
 
           if(movieInfo.openDt){
@@ -30,11 +30,11 @@
             let openDt = movieInfo.openDt;
             for(let i = 0; i < 2; i++){
               if(i == 0){
-              let text_arr = openDt.split('2022');
-              openDt = text_arr.join('2022.');
+                let text_arr = openDt.split('2022');
+                openDt = text_arr.join('2022.');
               } if(i == 1){
-              let text_arr = openDt.split('27');
-              openDt = text_arr.join('.27');
+                let text_arr = openDt.split('27');
+                openDt = text_arr.join('.27');
               }
             }          
             SetopenDT(openDt);         
@@ -44,6 +44,9 @@
             newActors.unshift(movieInfo.directors[0]);   // 감독 김한민을 맨앞에 넣어주었다.
             if(newActors[2].peopleNm === '공지삵'){  
                newActors.splice(2, 1);    // api에 이상한 공지삵 이란 이름이 추가되어 있어서 삭제한다.              
+            }
+            if(newActors[newActors.length - 1].peopleNm === '이건록'){          
+               newActors.pop();      // api에 이상한 이건록 이란 이름이 추가되어 있어서 삭제한다.  
             } 
             newActors.forEach((item, i) => { 
                 item['img'] = actorsImg[i];   // 배우들 이미지 새로 할당.
