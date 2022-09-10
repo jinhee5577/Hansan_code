@@ -47,7 +47,8 @@
             }
             if(newActors[newActors.length - 1].peopleNm === '이건록'){          
                newActors.pop();      // api에 이상한 이건록 이란 이름이 추가되어 있어서 삭제한다.  
-            } 
+            }
+            newActors = newActors.slice(0, 12);    //api에 배우들이 수십명이 추가되어 일단 기존UI 유지를 위해 일단 삭제.
             newActors.forEach((item, i) => { 
                 item['img'] = actorsImg[i];   // 배우들 이미지 새로 할당.
             })            
